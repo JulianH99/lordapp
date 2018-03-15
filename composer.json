@@ -1,0 +1,13 @@
+{
+    "name": "julian/phpsource",
+    "description": "PHP basic mvc structure",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julian Barrios",
+            "email": "juliancorredors99@outlook.com"
+        }
+    ],
+    "require": {}
+}
