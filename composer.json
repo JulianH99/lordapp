@@ -9,5 +9,11 @@
             "email": "juliancorredors99@outlook.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\Core\\": "framework/core",
+            "Framework\\DB\\" : "framework/db"
+        }
+    }
 }
