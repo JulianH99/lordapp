@@ -13,22 +13,23 @@ abstract class View {
 
     public static function render($view_name, $args = []) {
 
-        $view = VIEWS_DIR . $view_name . '.php';
+        $loader = new \Twig_Loader_Filesystem(VIEWS_DIR);
+
+        $twig = new \Twig_Environment($loader);
+
+        $view_name .= '.php';
+
+        $view = VIEWS_DIR . $view_name;
+
+        
 
         if(file_exists($view)) {
 
-            if(count($args) != 0){
-                foreach ($args as $var => $val) {
-                    $_SESSION[$var] = $val;
-                }
-            }
-
-            include $view;
-            
+            /* render template */
+            echo $twig->render($view_name, $args);
 
         }else{
             throw new ViewNotFoundException($view);
         }
     }
-
 }

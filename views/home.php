@@ -12,10 +12,8 @@
         <input type="text" name="name">
         <input type="submit" value="Enviar">
     </form>
-    <?php
-        if(isset($_SESSION['name'])){ 
-            echo $_SESSION['name'];
-        }
-    ?>
+    {% if name is not null %}
+        {{ name }}
+    {% endif %}
 </body>
 </html>
