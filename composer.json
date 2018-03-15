@@ -9,11 +9,17 @@
             "email": "juliancorredors99@outlook.com"
         }
     ],
-    "require": {},
+    "require": {
+        "twig/twig": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "Framework\\Core\\": "framework/core",
-            "Framework\\DB\\" : "framework/db"
+            "Framework\\DB\\" : "framework/db",
+            "Framework\\Lib\\": "framework/lib",
+            "Framework\\Helpers\\": "framework/helpers",
+            "Framework\\Lib\\Exceptions\\": "framework/lib/exceptions",
+            "Src\\Controllers\\": "src/controllers"
         }
     }
 }
