@@ -1,0 +1,19 @@
+{
+  "name": "lordapp",
+  "version": "1.0.0",
+  "description": "parcial practico de programacion",
+  "main": "static/src/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianH99/lordapp.git"
+  },
+  "author": "JulianH99",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JulianH99/lordapp/issues"
+  },
+  "homepage": "https://github.com/JulianH99/lordapp#readme"
+}
