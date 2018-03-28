@@ -17,7 +17,7 @@ abstract class View {
 
         $twig = new \Twig_Environment($loader);
 
-        $view_name .= '.php';
+        $view_name .= '.twig';
 
         $view = VIEWS_DIR . $view_name;
 

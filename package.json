@@ -1,19 +1,16 @@
 {
   "name": "lordapp",
   "version": "1.0.0",
-  "description": "parcial practico de programacion",
-  "main": "static/src/js/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JulianH99/lordapp.git"
-  },
-  "author": "JulianH99",
+  "main": "index.js",
+  "author": "JulianH99 <juliancorredors99@outlook.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JulianH99/lordapp/issues"
+  "scripts": {
+    "start": "gulp"
   },
-  "homepage": "https://github.com/JulianH99/lordapp#readme"
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.2.1"
+  }
 }
