@@ -1,19 +1,21 @@
 <?php
 
-namespace Src\Accessories;
+namespace App\Models\Accessories;
 
 
-use Src\Interfaces\Applicable;
+use App\Interfaces\Applicable;
 
 /**
- * 
+ * Class Effect
+ * @package App\Models\Accessories
  */
 class Effect implements Applicable{
     private $affected_attribute = '';
     private $value = 0;
 
     /**
-     * 
+     * @param $affected_attribute
+     * @param $value
      */
     public function __construct($affected_attribute, $value) {
         $this->affected_attribute = $affected_attribute;
@@ -21,11 +23,12 @@ class Effect implements Applicable{
     }
 
     /**
-     * 
+     * @param $object
+     * @return bool
      */
-    public function apply($object) { 
+    public function apply($object): bool {
 
-        if(property_exists($object, $this->affected_attribute)) {
+        if (property_exists($object, $this->affected_attribute)) {
 
         }
     }

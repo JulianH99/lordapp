@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Interfaces;
+namespace App\Interfaces;
 
 
 /**

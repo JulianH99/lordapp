@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Accessories;
+namespace App\Models\Accessories;
 
 
 /**
@@ -11,6 +11,10 @@ namespace Src\Accessories;
  * @abstract
  */
 abstract class WeaponType {
+    /* class constants */
+    const NONE = null;
+
+
     protected $minmax_power = [];
     protected $effects = array(); // this array must be of type Effect
 

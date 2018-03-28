@@ -1,9 +1,9 @@
 <?php
 
-namespace Src\Accessories;
+namespace App\Interfaces;
 
 /**
- * Defines a method that every effetc must implement in order to be appliable
+ * Defines a method that every effect must implement in order to be applicable
  * to an object
  * @author Julian Barrios
  * @version 0.1
@@ -11,10 +11,10 @@ namespace Src\Accessories;
 interface Applicable {
 
     /**
-     * Applys an effect to a given object $object
+     * Applies an effect to a given object $object
      * @param $object
      * @version 0.1
-     * @return bool wheter the application could be successfull or not
+     * @return bool whether the application could be successful or not
      */
     public function apply($object) : bool;
 }

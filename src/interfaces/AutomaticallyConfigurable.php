@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Interfaces;
+namespace App\Interfaces;
 
 /**
  * Holds the function to configure the values of a character randomly

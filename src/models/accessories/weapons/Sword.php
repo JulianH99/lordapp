@@ -1,13 +1,15 @@
 <?php
 
-namespace Src\Accessories\Weapons;
+namespace App\Accessories\Weapons;
 
-use Src\Accessories\Weapon;
-use Src\Accessories\WeaponType;
+use App\Models\Accessories\Weapon;
+use App\Models\Accessories\WeaponTypes\Melee;
 
 class Sword extends Weapon { 
 
     public function __construct() {
+        $this->picture = "sword.jpg";
+        $this->weapon_type = new Melee();
         
     }
 

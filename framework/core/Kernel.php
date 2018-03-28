@@ -17,10 +17,6 @@ class Kernel {
      * @throws MethodNotFoundException
      */
     public function __construct() {
-        if($_SERVER['REQUEST_URI'] == "/lordapp/"){
-            header("Location: http://localhost/lordapp/home/index");
-        }
-
         $this->init();
         $this->dispatch();
     }
@@ -53,7 +49,6 @@ class Kernel {
         define("CURRENT_METHOD", $this->getMethod());
 
 
-        $GLOBALS['config'] = include APP_DIR . '/config/config.php';
 
     }
 

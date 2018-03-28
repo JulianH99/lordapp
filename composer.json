@@ -19,7 +19,7 @@
             "Framework\\Lib\\": "framework/lib",
             "Framework\\Helpers\\": "framework/helpers",
             "Framework\\Lib\\Exceptions\\": "framework/lib/exceptions",
-            "Src\\": "src"
+            "App\\": "src"
         }
     }
 }

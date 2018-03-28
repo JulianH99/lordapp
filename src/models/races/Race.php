@@ -6,15 +6,17 @@
  * Time: 10:34 AM
  */
 
-namespace Src\Models\Races;
+namespace App\Models\Races;
 
 
-use Src\Accessories\Weapon;
-
+/**
+ * Class Race
+ * @version 0.2
+ */
 abstract class Race {
 
     /* class variables */
-    public static $none = null;
+    const NONE = null;
 
     /* object variables */
     protected $description = '';
@@ -22,8 +24,66 @@ abstract class Race {
     protected $minmax_power = [];
     protected $minmax_resistance = [];
     protected $minmax_speed = [];
-    protected $proportions = [];
+    protected $proportions = [
+        "life" => 0,
+        "power" => 0,
+        "resistance" => 0,
+        "speed" =>0
+    ];
 
-    
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMinmaxLife(): array
+    {
+        return $this->minmax_life;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMinmaxPower(): array
+    {
+        return $this->minmax_power;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMinmaxResistance(): array
+    {
+        return $this->minmax_resistance;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMinmaxSpeed(): array
+    {
+        return $this->minmax_speed;
+    }
+
+    /**
+     * @return array
+     */
+    public function getProportions(): array
+    {
+        return $this->proportions;
+    }
+
+
+
+
+
+
+
 
 }

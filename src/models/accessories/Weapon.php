@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Accessories;
+namespace App\Models\Accessories;
 
 
 /**
@@ -11,11 +11,11 @@ namespace Src\Accessories;
  */
 class Weapon {
     /* class variables */
-    public static $none = null;
+    const NONE = null;
 
     /* object variables */
     protected $picture = '';
-    protected $weapon_type = WeaponType::undefined;
+    protected $weapon_type = WeaponType::NONE;
     
 
 
