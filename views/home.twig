@@ -3,16 +3,19 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
-    
     <main class="login-screen">
-        <form action="?c=home&m=login" class="login-form">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Ingresa tu nombre" required>
+        <div class="container">
+            <div class="login-logo">
+                <div class="ring"></div>
+                <div class="sauron-eye"></div>
             </div>
-        </form>
+            <div role="form" class="login-form">
+                <div class="form-group">
+                    <input type="text" name="name" id="login-input" placeholder="Ingresa tu nombre" required />
+                </div>
+            </div>
+        </div>
     </main>
-
-
 {% endblock  %}
 
  

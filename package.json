@@ -5,12 +5,20 @@
   "author": "JulianH99 <juliancorredors99@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "gulp"
+    "start": "concurrently \"yarn browser\" \"yarn gulp\"",
+    "browser": "browser-sync start --proxy \"http://localhost/lordapp\" --files \"./**/*.*\"",
+    "gulp": "gulp"
   },
-  "dependencies": {
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.11",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^3.2.1"
+    "gulp-sass": "^3.2.1",
+    "node-sass": "^4.8.3",
+    "gulp-babel": ""
   }
 }
