@@ -9,6 +9,7 @@
 body {
   font-family: sans-serif;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 img {
@@ -23,16 +24,60 @@ input, button {
 
 .login-screen {
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  background: url("../img/loginbackground.png") no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
+  width: 100%;
+  background: url("../img/loginbackground.png") no-repeat center/cover;
+}
+
+.login-screen .dark-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #222;
+  -webkit-animation: fade-out .4s ease-in-out;
+          animation: fade-out .4s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+.login-screen .login-logo-container .login-logo {
+  width: 129px;
+  height: 129px;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  -webkit-animation: glow 1s ease-in-out alternate infinite, move .5s ease-in;
+          animation: glow 1s ease-in-out alternate infinite, move .5s ease-in;
+  -webkit-animation-delay: 0s, .6s;
+          animation-delay: 0s, .6s;
+  -webkit-animation-fill-mode: none, forwards;
+          animation-fill-mode: none, forwards;
+  background: url("../img/sauroneye.png") no-repeat -6px -6px;
+  background-size: 135px 135px;
 }
 
 .login-screen .container {
-  width: 600px;
-  margin: auto;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1em;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,81 +88,107 @@ input, button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 2em;
 }
 
-.login-screen .container .login-logo {
-  position: relative;
-  width: 400px;
-  height: 300px;
-}
-
-.login-screen .container .login-logo .ring {
-  position: absolute;
-  width: 100%;
-  height: 320px;
-  background: url("../img/lord1.png") no-repeat center center;
-  background-size: cover;
-  -webkit-animation: rotate .9s ease-in-out;
-          animation: rotate .9s ease-in-out;
-  -webkit-animation-delay: .8s;
-          animation-delay: .8s;
-}
-
-.login-screen .container .login-logo .sauron-eye {
-  background: url("../img/sauroneye.png") no-repeat center center;
-  background-size: cover;
-  width: 194px;
-  height: 200px;
-  position: absolute;
-  left: 52%;
-  top: 51%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.login-screen .container .login-logo img {
-  margin: auto;
-  display: block;
+.login-screen .container .title {
+  color: #fff;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  text-shadow: 0 0 20px #ea6020;
 }
 
 .login-screen .container .login-form {
-  padding: .5em;
+  margin-top: 7em;
+  width: 100%;
 }
 
-.login-screen .container .login-form .form-group input {
-  --shadow-color: $secondary_color;
-  margin-top: 1em;
-  padding: .3em 1em;
+.login-screen .container .login-form input {
+  --shadow-color: #EA6020;
+  padding: .4em .7em;
+  width: 100%;
+  font-size: 1.5em;
   background: rgba(34, 34, 34, 0.9);
   color: #fff;
-  font-size: 2em;
-  font-family: "Cardo", serif;
   text-align: center;
-  letter-spacing: 5px;
-  -webkit-box-shadow: 0 0 20px var(--shadow-color);
-          box-shadow: 0 0 20px var(--shadow-color);
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  font-family: "Cardo", serif;
+  -webkit-box-shadow: 0 0 10px var(--shadow-color);
+          box-shadow: 0 0 10px var(--shadow-color);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
-.login-screen .container .login-form .form-group input:focus {
-  -webkit-box-shadow: 0 0 90px var(--shadow-color);
-          box-shadow: 0 0 90px var(--shadow-color);
+.login-screen .container .login-form input:focus {
+  -webkit-box-shadow: 0 0 50px var(--shadow-color);
+          box-shadow: 0 0 50px var(--shadow-color);
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes glow {
   from {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-box-shadow: 0 0 10px #ea6020;
+            box-shadow: 0 0 10px #ea6020;
+  }
+  to {
+    -webkit-box-shadow: 0 0 500px #ea6020;
+            box-shadow: 0 0 500px #ea6020;
   }
 }
 
-@keyframes rotate {
+@keyframes glow {
   from {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-box-shadow: 0 0 10px #ea6020;
+            box-shadow: 0 0 10px #ea6020;
+  }
+  to {
+    -webkit-box-shadow: 0 0 500px #ea6020;
+            box-shadow: 0 0 500px #ea6020;
+  }
+}
+
+@-webkit-keyframes move {
+  to {
+    top: 80%;
+    left: 90%;
+    bottom: 10px;
+    right: 10px;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
+@keyframes move {
+  to {
+    top: 80%;
+    left: 90%;
+    bottom: 10px;
+    right: 10px;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
   }
 }

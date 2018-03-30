@@ -4,16 +4,26 @@
 
 {% block content %}
     <main class="login-screen">
-        <div class="container">
+        <div class="dark-screen">
+
+        </div>
+        <section class="login-logo-container">
+
             <div class="login-logo">
-                <div class="ring"></div>
-                <div class="sauron-eye"></div>
+
             </div>
-            <div role="form" class="login-form">
+
+        </section>
+        <div class="container">
+
+            <section class="title">
+                <h1>Bienvenido a Mordor!</h1>
+            </section>
+            <form action="?c=home&m=login"
+                  method="post"  class="login-form" id="login-form">
                 <div class="form-group">
-                    <input type="text" name="name" id="login-input" placeholder="Ingresa tu nombre" required />
-                </div>
-            </div>
+                    <input type="text" name="name" id="login-input" placeholder="Ingresa tu nombre" />
+            </form>
         </div>
     </main>
 {% endblock  %}

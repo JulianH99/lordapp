@@ -16,9 +16,10 @@
     "css-loader": "^0.28.11",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "",
+    "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^3.2.1",
-    "node-sass": "^4.8.3",
-    "gulp-babel": ""
+    "node-sass": "^4.8.3"
   }
 }

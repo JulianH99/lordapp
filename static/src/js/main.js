@@ -1,31 +1,25 @@
 
+/* useful variables */
+let errorColor = "#d81532"
 
+console.log("error")
 
 /* detect keypress on login */
 
-document.querySelector("#login-input").addEventListener('keypress', function(e){
+document.querySelector("#login-form").addEventListener('submit', function(e) {
 
-    let charCode = e.keyCode
+    e.preventDefault()
 
-    let value = this.value
+    let input = document.querySelector("#login-input")
 
-    if(charCode === 13) {
-        if(!value.empty()) {
-            fetch("http://localhost/lordapp/?c=home&m=login", {
-                method: 'post',
-                body: JSON.stringify({name: value}),
-                headers: new Headers({
-                    'Content-Type': 'application/json'
-                })
-            })
-                .then(res => res.json())
-                .then(res => window.location = `http://localhost/${res}`)
-                .catch(error => alert(error))
+    let value = input.value;
 
-        }
-        else{
-
-        }
+    if(value !== null && value !== "") {
+        document.querySelector("#login-form").submit()
     }
+    else{
 
+        input.style.setProperty('--shadow-color', errorColor)
+        console.log("nope")
+    }
 })
