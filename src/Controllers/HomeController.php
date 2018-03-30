@@ -15,10 +15,4 @@ class HomeController extends Controller{
         View::render('home');
     }
 
-    public function get() {
-
-        $name = $_POST['name'];
-
-        View::render('home', ['name' => $name]);
-    }
 }

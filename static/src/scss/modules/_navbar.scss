@@ -1,0 +1,12 @@
+.navbar {
+  font-family: $secondary_font;
+  padding: .5em 1em;
+  width: 100%;
+  font-size: 1.1em;
+  background: $accent_color;
+  color: #fff;
+  ul{
+    list-style: none;
+    display: flex;
+  }
+}

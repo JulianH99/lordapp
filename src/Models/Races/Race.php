@@ -19,7 +19,9 @@ abstract class Race {
     const NONE = null;
 
     /* object variables */
+    protected $name = '';
     protected $description = '';
+    protected $picture = '';
     protected $minmax_life = [];
     protected $minmax_power = [];
     protected $minmax_resistance = [];
@@ -34,9 +36,23 @@ abstract class Race {
     /**
      * @return string
      */
+    public function getName(): string {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
     public function getDescription(): string
     {
         return $this->description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPicture() : string {
+        return $this->picture;
     }
 
     /**

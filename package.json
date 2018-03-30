@@ -5,9 +5,9 @@
   "author": "JulianH99 <juliancorredors99@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"yarn browser\" \"yarn gulp\"",
-    "browser": "browser-sync start --proxy \"http://localhost/lordapp\" --files \"./**/*.*\"",
-    "gulp": "gulp"
+    "start": "npm run dev",
+    "dev": "gulp watch",
+    "build": "gulp"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -1,0 +1,25 @@
+{% extends 'layouts/layout.twig' %}
+
+{% block title %} Choice your race {% endblock %}
+
+{% block content %}
+
+    <div class="choices__container">
+
+        {{ include('./modules/navbar.twig') }}
+
+        <h1 class="choices__title">Selecciona tu raza</h1>
+
+
+        {{ include('./modules/choice/races.twig') }}
+
+
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="./static/dist/js/anime.min.js"></script>
+    <script src="./static/dist/js/choice.js"></script>
+{% endblock %}

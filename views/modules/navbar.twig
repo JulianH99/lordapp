@@ -1,0 +1,9 @@
+<nav class="navbar">
+    <ul class="navbar-links">
+        {% if name is not null %}
+            <li class="navbar-user-link">
+                Bienvenido, {{ name }}!
+            </li>
+        {% endif %}
+    </ul>
+</nav>

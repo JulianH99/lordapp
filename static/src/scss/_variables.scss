@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Cardo|Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Cinzel|Berkshire+Swash');
 
 
 // fonts
 
 $title_font: 'Cinzel', serif;
 
-$content_font: 'Cardo', serif;
+$content_font: 'Cormorant Garamond', serif;
+
+$secondary_font: 'Berkshire Swash', serif;
 
 // colors
+$primary_color: #222;
+
+$accent_color: #07367c;
+
 $secondary_color: #ea6020;

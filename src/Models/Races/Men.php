@@ -8,9 +8,11 @@ namespace App\Models\Races;
 class Men extends Race {
 
     public function __construct(){
+        $this->name = "Hombres";
         $this->description = "Una de las razas más antiguas y más numerosas de la tierra"
                             . ". Tienes menos resistencia y poder que los demas, pero una longevidad y"
                             . " y velocidad considerables";
+        $this->picture = "men.jpg";
         $this->minmax_life = [80, 100];
         $this->minmax_power = [60, 70];
         $this->minmax_resistance = [50, 70];

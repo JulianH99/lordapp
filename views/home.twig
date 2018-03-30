@@ -19,7 +19,7 @@
             <section class="title">
                 <h1>Bienvenido a Mordor!</h1>
             </section>
-            <form action="?c=home&m=login"
+            <form action="?c=choices"
                   method="post"  class="login-form" id="login-form">
                 <div class="form-group">
                     <input type="text" name="name" id="login-input" placeholder="Ingresa tu nombre" />
@@ -27,5 +27,9 @@
         </div>
     </main>
 {% endblock  %}
+
+{% block scripts %}
+    <script src="./static/dist/js/login.js"></script>
+{% endblock %}
 
  

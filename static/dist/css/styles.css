@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cardo|Cinzel");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond|Cinzel|Berkshire+Swash");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -110,7 +110,7 @@ input, button {
   background: rgba(34, 34, 34, 0.9);
   color: #fff;
   text-align: center;
-  font-family: "Cardo", serif;
+  font-family: "Berkshire Swash", serif;
   -webkit-box-shadow: 0 0 10px var(--shadow-color);
           box-shadow: 0 0 10px var(--shadow-color);
   -webkit-transition: all .3s;
@@ -191,4 +191,115 @@ input, button {
     opacity: 0;
     top: -100%;
   }
+}
+
+.navbar {
+  font-family: "Berkshire Swash", serif;
+  padding: .5em 1em;
+  width: 100%;
+  font-size: 1.1em;
+  background: #07367c;
+  color: #fff;
+}
+
+.navbar ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.choices__container {
+  background: #222;
+  color: #fff;
+  height: 100vh;
+}
+
+.choices__container .choices__title {
+  margin: .3em 0;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  color: #fff;
+}
+
+.races {
+  --cols: 6;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-gap: 30px;
+}
+
+.races .race {
+  opacity: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.races .race:hover .race__img {
+  -webkit-box-shadow: 0 0 50px #07367c;
+          box-shadow: 0 0 50px #07367c;
+}
+
+.races .race:hover .race__name {
+  font-size: 1.3em;
+}
+
+.races .race:hover .race__description {
+  opacity: 1;
+}
+
+.races .race, .races .race__img, .races .race__name, .races .race__description {
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.races .race__img-container {
+  position: relative;
+}
+
+.races .race__img {
+  height: 300px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 30px #07367c;
+          box-shadow: 0 0 30px #07367c;
+}
+
+.races .race__name {
+  font-family: "Berkshire Swash", serif;
+  font-size: 1.2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-shadow: 0 0 20px #ea6020;
+}
+
+.races .race__description {
+  font-family: "Cormorant Garamond", serif;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(34, 34, 34, 0.8);
+}
+
+.races .race__description p {
+  text-align: center;
+  margin-top: 50%;
+  margin-bottom: 50%;
+  padding-left: .3em;
+  padding-right: .3em;
 }

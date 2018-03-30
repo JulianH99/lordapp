@@ -7,8 +7,10 @@ namespace App\Models\Races;
 class Elf extends Race  {
 
     public function __construct() {
+        $this->name = "Elfos";
         $this->description = "La mas antigua y noble de las raza." .
             " Son personas sabias y habiles en la batalla";
+        $this->picture = "elf.jpg";
         $this->minmax_life = [80, 100];
         $this->minmax_power = [80, 100];
         $this->minmax_resistance = [70, 90];

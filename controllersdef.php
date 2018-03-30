@@ -5,5 +5,6 @@
  */
 
 return $controllers = [
-    'home' => 'App\Controllers\HomeController'
+    'home' => 'App\Controllers\HomeController',
+    'choices' => 'App\Controllers\ChoicesController'
 ];

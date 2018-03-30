@@ -9,8 +9,10 @@ namespace App\Models\Races;
 class Dwarf extends Race {
 
     public function __construct(){
+        $this->name = "Enanos";
         $this->description = "Humanoides de poco tamaño, pero con cuerpos robustos "
                             . "y un gran manejo de las armas";
+        $this->picture = "dwarf.jpg";
         $this->minmax_life = [90, 100];
         $this->minmax_power = [70, 90];
         $this->minmax_resistance = [80, 100];
