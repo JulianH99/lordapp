@@ -40,8 +40,8 @@ input, button {
           animation: fade-out .4s ease-in-out;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: .6s;
-          animation-delay: .6s;
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
 }
 
 .login-screen .login-logo-container .login-logo {
@@ -58,8 +58,8 @@ input, button {
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
-  -webkit-animation: glow 1s ease-in-out alternate infinite, move .5s ease-in;
-          animation: glow 1s ease-in-out alternate infinite, move .5s ease-in;
+  -webkit-animation: glow 1.5s ease-in-out alternate infinite, move .5s ease-in;
+          animation: glow 1.5s ease-in-out alternate infinite, move .5s ease-in;
   -webkit-animation-delay: 0s, .6s;
           animation-delay: 0s, .6s;
   -webkit-animation-fill-mode: none, forwards;
@@ -85,6 +85,9 @@ input, button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -125,45 +128,41 @@ input, button {
 
 @-webkit-keyframes glow {
   from {
-    -webkit-box-shadow: 0 0 10px #ea6020;
-            box-shadow: 0 0 10px #ea6020;
+    -webkit-box-shadow: 0 0 10px 5px #ea6020;
+            box-shadow: 0 0 10px 5px #ea6020;
   }
   to {
-    -webkit-box-shadow: 0 0 500px #ea6020;
-            box-shadow: 0 0 500px #ea6020;
+    -webkit-box-shadow: 0 0 200px 5px #ea6020;
+            box-shadow: 0 0 200px 5px #ea6020;
   }
 }
 
 @keyframes glow {
   from {
-    -webkit-box-shadow: 0 0 10px #ea6020;
-            box-shadow: 0 0 10px #ea6020;
+    -webkit-box-shadow: 0 0 10px 5px #ea6020;
+            box-shadow: 0 0 10px 5px #ea6020;
   }
   to {
-    -webkit-box-shadow: 0 0 500px #ea6020;
-            box-shadow: 0 0 500px #ea6020;
+    -webkit-box-shadow: 0 0 200px 5px #ea6020;
+            box-shadow: 0 0 200px 5px #ea6020;
   }
 }
 
 @-webkit-keyframes move {
   to {
-    top: 80%;
-    left: 90%;
-    bottom: 10px;
-    right: 10px;
-    -webkit-transform: scale(0.4);
-            transform: scale(0.4);
+    top: 5%;
+    left: 50%;
+    -webkit-transform: scale(0.8) translateX(-50%);
+            transform: scale(0.8) translateX(-50%);
   }
 }
 
 @keyframes move {
   to {
-    top: 80%;
-    left: 90%;
-    bottom: 10px;
-    right: 10px;
-    -webkit-transform: scale(0.4);
-            transform: scale(0.4);
+    top: 5%;
+    left: 50%;
+    -webkit-transform: scale(0.8) translateX(-50%);
+            transform: scale(0.8) translateX(-50%);
   }
 }
 
