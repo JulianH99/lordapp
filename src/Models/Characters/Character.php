@@ -16,13 +16,163 @@ use App\Interfaces\AutomaticallyConfigurable;
  */
 abstract class Character implements Configurable, AutomaticallyConfigurable{
 
+    protected $name = '';
     protected $life = 0;
     protected $race = Race::NONE;
     protected $power = 0;
     protected $resistance = 0;
     protected $speed = 0;
     protected $weapon = Weapon::NONE;
+    protected $picture = '';
     protected $automatic_configure = true;
+
+
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPicture(): string
+    {
+        return $this->picture;
+    }
+
+
+
+    /**
+     * @return int
+     */
+    public function getLife(): int
+    {
+        return $this->life;
+    }
+
+    /**
+     * @param int $life
+     * @return Character
+     */
+    public function setLife(int $life): Character
+    {
+        $this->life = $life;
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getRace()
+    {
+        return $this->race;
+    }
+
+    /**
+     * @param null $race
+     * @return Character
+     */
+    public function setRace($race)
+    {
+        $this->race = $race;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPower(): int
+    {
+        return $this->power;
+    }
+
+    /**
+     * @param int $power
+     * @return Character
+     */
+    public function setPower(int $power): Character
+    {
+        $this->power = $power;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getResistance(): int
+    {
+        return $this->resistance;
+    }
+
+    /**
+     * @param int $resistance
+     * @return Character
+     */
+    public function setResistance(int $resistance): Character
+    {
+        $this->resistance = $resistance;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSpeed(): int
+    {
+        return $this->speed;
+    }
+
+    /**
+     * @param int $speed
+     * @return Character
+     */
+    public function setSpeed(int $speed): Character
+    {
+        $this->speed = $speed;
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getWeapon()
+    {
+        return $this->weapon;
+    }
+
+    /**
+     * @param null $weapon
+     * @return Character
+     */
+    public function setWeapon($weapon)
+    {
+        $this->weapon = $weapon;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAutomaticConfigure(): bool
+    {
+        return $this->automatic_configure;
+    }
+
+    /**
+     * @param bool $automatic_configure
+     * @return Character
+     */
+    public function setAutomaticConfigure(bool $automatic_configure): Character
+    {
+        $this->automatic_configure = $automatic_configure;
+        return $this;
+    }
+
+
 
     /**
      * @return bool
@@ -75,6 +225,7 @@ abstract class Character implements Configurable, AutomaticallyConfigurable{
         }
         return false;
     }
+
 
 
 }

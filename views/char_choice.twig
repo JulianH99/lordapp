@@ -1,0 +1,12 @@
+{% extends 'layouts/layout.twig' %}
+
+{% block title %} Choice your character {% endblock %}
+
+{% block content %}
+
+    <div class="choices__container">
+        <h1 class="choices__title">Elije tu personaje</h1>
+        {{ include('./modules/choice/characters.twig') }}
+    </div>
+
+{% endblock %}

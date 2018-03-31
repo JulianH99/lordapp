@@ -8,6 +8,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Characters\Gandalf;
 use App\Models\Races\Dwarf;
 use App\Models\Races\Elf;
 use App\Models\Races\Hobbit;
@@ -33,6 +34,10 @@ class ChoicesController extends Controller {
             "men" => new Men(),
             "orc" => new Orc()
         ];
+
+        $this->chars = [
+            "gandalf" => new Gandalf()
+        ];
     }
 
     /**
@@ -45,12 +50,32 @@ class ChoicesController extends Controller {
     public function index(){
 
         $name = $_POST['name'];
+
+        $_SESSION['name'] = $name;
+
         $data = [
-            "name" => $name,
             "races" => $this->races
         ];
 
-        View::render('choices', $data);
+        View::render('race_choice', $data);
+
+    }
+
+    /**
+     *
+     * @throws \Framework\Lib\Exceptions\ViewNotFoundException
+     */
+    public function chosechar() {
+
+        $race = strtolower($_POST['race']);
+
+        $race_characters = array_filter($this->chars, function($elem) use($race){
+           return $elem->getRace()->getName() === $race;
+        });
+
+        $data = ["characters" => $race_characters];
+
+        View::render("char_choice", $data);
 
     }
 }

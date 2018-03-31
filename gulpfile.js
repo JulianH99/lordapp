@@ -35,7 +35,7 @@ gulp.task('js', function() {
 
 /* minimize images */
 gulp.task('images', function() {
-    gulp.src('./static/src/img/*.*')
+    gulp.src('./static/src/img/**/*.*')
         .pipe(image({progressive: true}))
         .pipe(gulp.dest('./static/dist/img/'))
 })

@@ -13,7 +13,7 @@ class Maiar extends Race {
      * Maiar constructor.
      */
     public function __construct() {
-        $this->name = "Maiars";
+        $this->name = "maiars";
         $this->description = "Poderosos seres magicos creados antes del universo mismo";
         $this->picture = "maiar.jpg";
         $this->minmax_life = [90, 100];

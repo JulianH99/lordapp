@@ -5,16 +5,12 @@
 {% block content %}
 
     <div class="choices__container">
-
-        {{ include('./modules/navbar.twig') }}
-
         <h1 class="choices__title">Selecciona tu raza</h1>
-
-
         {{ include('./modules/choice/races.twig') }}
-
-
     </div>
+    <form method="post" id="race-form" action="?c=choices&m=chosechar">
+        <input type="hidden" id="chosen-race" name="race">
+    </form>
 
 
 {% endblock %}

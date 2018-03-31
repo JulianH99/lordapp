@@ -8,7 +8,7 @@ namespace App\Models\Races;
 class Men extends Race {
 
     public function __construct(){
-        $this->name = "Hombres";
+        $this->name = "hombres";
         $this->description = "Una de las razas más antiguas y más numerosas de la tierra"
                             . ". Tienes menos resistencia y poder que los demas, pero una longevidad y"
                             . " y velocidad considerables";

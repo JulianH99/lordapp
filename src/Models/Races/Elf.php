@@ -7,7 +7,7 @@ namespace App\Models\Races;
 class Elf extends Race  {
 
     public function __construct() {
-        $this->name = "Elfos";
+        $this->name = "elfos";
         $this->description = "La mas antigua y noble de las raza." .
             " Son personas sabias y habiles en la batalla";
         $this->picture = "elf.jpg";

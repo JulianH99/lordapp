@@ -9,7 +9,7 @@ namespace App\Models\Races;
 class Dwarf extends Race {
 
     public function __construct(){
-        $this->name = "Enanos";
+        $this->name = "enanos";
         $this->description = "Humanoides de poco tamaño, pero con cuerpos robustos "
                             . "y un gran manejo de las armas";
         $this->picture = "dwarf.jpg";

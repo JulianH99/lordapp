@@ -8,7 +8,7 @@ namespace App\Models\Races;
 class Hobbit extends Race {
 
     public function __construct(){
-        $this->name = "Hobbits";
+        $this->name = "hobbits";
         $this->description = "Más pequeños que los enanos. Algunos son fuertes, otros más rápidos";
         $this->picture = "hobbit.jpg";
         $this->minmax_life =  [60, 80];

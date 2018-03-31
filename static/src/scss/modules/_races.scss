@@ -1,9 +1,12 @@
+
+
 .choices__container{
+  height: 100vh;
+  max-height: inherit;
   background: #222;
   color: #fff;
-  height: 100vh;
   .choices__title{
-    margin: .3em 0;
+    padding: .5em 0;
     font-family: $title_font;
     text-align: center;
     color: #fff;
@@ -11,18 +14,19 @@
 
 }
 
+
 .races{
   --cols: 6;
   padding: 1em;
   display: grid;
+  @extend %abs-center;
+  width: 95%;
   grid-template-columns: repeat(var(--cols), 1fr);
   grid-template-rows: 1fr;
   grid-auto-columns: 1fr;
   grid-gap: 30px;
 
   .race{
-    //height: 500px;
-    //border: 1px solid red;
     opacity: 0;
     cursor: pointer;
     display: flex;
@@ -30,11 +34,9 @@
     align-items: center;
 
     &:hover{
+      transform: scale(1.1);
       .race__img{
         box-shadow: 0 0 50px $accent_color;
-      };
-      .race__name{
-        font-size: 1.3em;
       }
       .race__description {
         opacity: 1;

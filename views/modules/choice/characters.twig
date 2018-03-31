@@ -1,0 +1,13 @@
+<section class="characters">
+    <!-- here goes the characters -->
+    {% for character in characters %}
+        <div class="character">
+            <div class="character__img-name">
+                <img src="./static/dist/img/characters/{{ character.picture }}"
+                     class="character__img" alt="">
+                <p class="character__name">{{ character.name | title }}</p>
+            </div>
+        </div>
+        
+    {% endfor %}
+</section>

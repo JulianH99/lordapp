@@ -17,6 +17,8 @@ class Gandalf extends Character {
      * Gandalf constructor.
      */
     public function __construct(){
+        $this->name = "gandalf";
+        $this->picture = 'gandalf.jpg';
         $this->race = new Maiar();
     }
 

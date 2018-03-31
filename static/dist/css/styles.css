@@ -22,6 +22,15 @@ input, button {
   border: none;
 }
 
+.races {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .login-screen {
   height: 100vh;
   width: 100%;
@@ -197,7 +206,7 @@ input, button {
   padding: .5em 1em;
   width: 100%;
   font-size: 1.1em;
-  background: #07367c;
+  background: #222;
   color: #fff;
 }
 
@@ -209,13 +218,14 @@ input, button {
 }
 
 .choices__container {
+  height: 100vh;
+  max-height: inherit;
   background: #222;
   color: #fff;
-  height: 100vh;
 }
 
 .choices__container .choices__title {
-  margin: .3em 0;
+  padding: .5em 0;
   font-family: "Cinzel", serif;
   text-align: center;
   color: #fff;
@@ -225,6 +235,7 @@ input, button {
   --cols: 6;
   padding: 1em;
   display: grid;
+  width: 95%;
   grid-template-columns: repeat(var(--cols), 1fr);
   grid-template-rows: 1fr;
   grid-auto-columns: 1fr;
@@ -246,13 +257,15 @@ input, button {
           align-items: center;
 }
 
+.races .race:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .races .race:hover .race__img {
   -webkit-box-shadow: 0 0 50px #07367c;
           box-shadow: 0 0 50px #07367c;
-}
-
-.races .race:hover .race__name {
-  font-size: 1.3em;
 }
 
 .races .race:hover .race__description {
