@@ -14,8 +14,16 @@ abstract class WeaponType {
     /* class constants */
     const NONE = null;
 
-
-    protected $minmax_power = [];
     protected $effects = array(); // this array must be of type Effect
+
+
+    /**
+     * Returns the array of effects
+     *
+     * @return array<Effect>
+     */
+    public function getEffects() {
+        return $this->effects;
+    }
 
 }

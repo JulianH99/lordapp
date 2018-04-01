@@ -36,7 +36,8 @@ class ChoicesController extends Controller {
         ];
 
         $this->chars = [
-            "gandalf" => new Gandalf()
+            "gandalf" => new Gandalf(),
+            "gandalf1" => new Gandalf()
         ];
     }
 
@@ -65,7 +66,7 @@ class ChoicesController extends Controller {
      *
      * @throws \Framework\Lib\Exceptions\ViewNotFoundException
      */
-    public function chosechar() {
+    public function chooserace() {
 
         $race = strtolower($_POST['race']);
 
@@ -76,6 +77,29 @@ class ChoicesController extends Controller {
         $data = ["characters" => $race_characters];
 
         View::render("char_choice", $data);
+
+    }
+
+
+    /**
+     * Loads the character information to pass it to a new view
+     *
+     * @return void
+     * @throws \Framework\Lib\Exceptions\ViewNotFoundException
+     */
+    public function choosechar() {
+
+        $character = $_POST['character'];
+        
+        $chosen_character = $this->chars[$character];
+
+        $chosen_character->automatic_configure();
+
+        $data = [
+            "character" => $chosen_character
+        ];
+
+        View::render("show_char", $data);
 
     }
 }

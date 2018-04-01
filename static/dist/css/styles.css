@@ -22,7 +22,7 @@ input, button {
   border: none;
 }
 
-.races {
+.races, .characters {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -318,13 +318,22 @@ input, button {
 
 .characters {
   --cols: 2;
+  /*position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
   display: grid;
+  grid-gap: 50px;
   grid-template-columns: repeat(var(--cols), 1fr);
   grid-template-rows: 1fr;
 }
 
 .characters .character {
-  border: 1px solid red;
+  opacity: 0;
+  margin: auto;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,6 +344,20 @@ input, button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.characters .character:hover .character__img-name {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.characters .character__img-name {
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 .characters .character__img-name .character__img {
@@ -347,6 +370,6 @@ input, button {
   font-family: "Berkshire Swash", serif;
   text-align: center;
   font-size: 1.2em;
-  margin-top: .5em;
+  margin-top: 1em;
   text-shadow: 0 0 20px #ea6020;
 }

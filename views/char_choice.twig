@@ -8,5 +8,14 @@
         <h1 class="choices__title">Elije tu personaje</h1>
         {{ include('./modules/choice/characters.twig') }}
     </div>
+    <form id="char-form" action="?c=choices&m=choosechar" method="post">
+        <input type="hidden" value="" id="char-input" name="character">
+    </form>
 
+{% endblock %}
+
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="./static/dist/js/characters.js"></script>
 {% endblock %}

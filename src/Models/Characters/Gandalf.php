@@ -5,6 +5,7 @@ namespace App\Models\Characters;
 
 
 use App\Models\Races\Maiar;
+use App\Models\Accessories\Weapons\MagicStaff;
 
 /**
  * The Gandalf class represents the known character of the lord of the rings
@@ -20,6 +21,7 @@ class Gandalf extends Character {
         $this->name = "gandalf";
         $this->picture = 'gandalf.jpg';
         $this->race = new Maiar();
+        $this->weapon = new MagicStaff();
     }
 
 }

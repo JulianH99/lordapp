@@ -1,7 +1,5 @@
 
 let run = ()=> {
-
-
     anime({
         targets: '.race',
         opacity: 1,

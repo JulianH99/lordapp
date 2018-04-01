@@ -1,0 +1,109 @@
+{% extends 'layouts/layout.twig' %}
+
+{% block title %} Tweak your character {% endblock %}
+
+{% block content %}
+
+    <div class="tweak-container">
+        <section class="container__character">
+            <div class="character__img-container">
+                {# <img src="./static/dist/img/characters/{{ character.picture }}"
+                     alt="{{ character.name }}" class="character__img"> #}
+            </div>
+            <div class="character__name-container">
+                <p class="character__name">{{ character.name }}</p>
+            </div>
+        </section>
+        <section class="tweak-options">
+
+            <div class="tweal-panel">
+                <p class="tweak-panel__title">Estadisticas</p>
+                <section class="tweak-panel__content">
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat__text">
+                                <p class="stat__name">Vida</p>
+                                <p class="stat__value">{{ character.life }}</p>
+                            </div>
+                            <div class="stat__input">
+                                <input type="range" name="character_life" 
+                                    id="character_life" min="{{ character.race.minmaxlife[0] }}"
+                                    max="{{ character.race.minmaxlife[1] }}"
+                                    value="{{ character.life }}">
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__text">
+                                <p class="stat__name">Poder</p>
+                                <p class="stat__value">{{ character.power }}</p>
+                            </div>
+                            <div class="stat__input">
+                                <input type="range" name="character_life" 
+                                    id="character_life" min="{{ character.race.minmaxpower[0] }}"
+                                    max="{{ character.race.minmaxpower[1] }}"
+                                    value="{{ character.power }}">
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__text">
+                                <p class="stat__name">Resistencia</p>
+                                <p class="stat__value">{{ character.resistance }}</p>
+                            </div>
+                            <div class="stat__input">
+                                <input type="range" name="character_life" 
+                                    id="character_life" min="{{ character.race.minmaxresistance[0] }}"
+                                    max="{{ character.race.minmaxresistance[1] }}"
+                                    value="{{ character.resistance }}">
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__text">
+                                <p class="stat__name">Velocidad</p>
+                                <p class="stat__value">{{ character.speed }}</p>
+                            </div>
+                            <div class="stat__input">
+                                <input type="range" name="character_life" 
+                                    id="character_life" min="{{ character.race.minmaxspeed[0] }}"
+                                    max="{{ character.race.minmaxspeed[1] }}"
+                                    value="{{ character.speed }}">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+            <div class="tweak-panel">
+                <p class="tweak-panel__title">Arma</p>
+                <div class="tweak-panel__content">
+                    <section class="weapons-container">
+                        <div class="weapons-slider">
+                            {% for weapon in weapons %}
+                                <div class="weapon"></div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <section class="weapon-description">
+                        <p class="description__title">Efectos</p>
+                        <div class="weapon__effects-container">
+                            <ul class="weapon__effects">
+                                {% for weapon in weapons %}
+                                    {% for effect in weapon.weapontype.effects %} 
+                                        <div class="effect">
+                                            {{ effect.atrribute}} {{ effect.value }}
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </sect>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="./static/dist/js/tweak.js"></script>
+{% endblock %}
