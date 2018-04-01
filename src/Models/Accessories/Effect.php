@@ -27,11 +27,32 @@ class Effect implements Applicable{
     }
 
     /**
+     * Returns the affeced attribute from the effect
+     * 
+     * @return string
+     * @version 0.1
+     */
+    public function getAffectedAttribute() {
+        return $this->affected_attribute;
+    }
+
+    /**
+     * Returns the value to apply to the affected attribute
+     *
+     * @return integer
+     * @version 0.1
+     */
+    public function getValue() {
+        return $this->value;
+    }
+
+    /**
      * Applies the effect to the $object, checking if this
      * has the attribute defined in $this->affected attribute.
      * @see \App\Interfaces\Applicable
      * @param $object
      * @return bool
+     * @version 0.1    
      */
     public function apply($object): bool {
 

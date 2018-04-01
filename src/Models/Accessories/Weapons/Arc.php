@@ -18,6 +18,7 @@ use App\Models\Accessories\WeaponTypes\Shooter;
 class Arc extends Weapon {
 
     public function __construct() {
+        $this->name = "Arc";
         $this->picture = "arc.jpg";
         $this->weapon_type = new Shooter();
     }

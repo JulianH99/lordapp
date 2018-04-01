@@ -15,6 +15,12 @@ use App\Models\Races\Hobbit;
 use App\Models\Races\Maiar;
 use App\Models\Races\Men;
 use App\Models\Races\Orc;
+
+use App\Models\Accessories\Weapons\MagicStaff;
+use App\Models\Accessories\Weapons\Arc;
+use App\Models\Accessories\Weapons\Sword;
+
+
 use Framework\Helpers\View;
 use Framework\Core\BaseController as Controller;
 
@@ -24,6 +30,7 @@ class ChoicesController extends Controller {
 
     private $races = [];
     private $chars = [];
+    private $weapons = [];
 
     public function __construct() {
         $this->races = [
@@ -38,6 +45,12 @@ class ChoicesController extends Controller {
         $this->chars = [
             "gandalf" => new Gandalf(),
             "gandalf1" => new Gandalf()
+        ];
+
+        $this->weapons = [
+            new MagicStaff(),
+            new Sword(),
+            new Arc()
         ];
     }
 
@@ -74,7 +87,9 @@ class ChoicesController extends Controller {
            return $elem->getRace()->getName() === $race;
         });
 
-        $data = ["characters" => $race_characters];
+        $data = [
+            "characters" => $race_characters
+        ];
 
         View::render("char_choice", $data);
 
@@ -96,7 +111,8 @@ class ChoicesController extends Controller {
         $chosen_character->automatic_configure();
 
         $data = [
-            "character" => $chosen_character
+            "character" => $chosen_character,
+            "weapons" => $this->weapons
         ];
 
         View::render("show_char", $data);

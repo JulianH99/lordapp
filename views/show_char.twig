@@ -76,26 +76,12 @@
                 <p class="tweak-panel__title">Arma</p>
                 <div class="tweak-panel__content">
                     <section class="weapons-container">
-                        <div class="weapons-slider">
+                        <div class="weapon-slider">
                             {% for weapon in weapons %}
-                                <div class="weapon"></div>
+
                             {% endfor %}
                         </div>
                     </section>
-                    <section class="weapon-description">
-                        <p class="description__title">Efectos</p>
-                        <div class="weapon__effects-container">
-                            <ul class="weapon__effects">
-                                {% for weapon in weapons %}
-                                    {% for effect in weapon.weapontype.effects %} 
-                                        <div class="effect">
-                                            {{ effect.atrribute}} {{ effect.value }}
-                                        </div>
-                                    {% endfor %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </sect>
                 </div>
             </div>
         </section>
