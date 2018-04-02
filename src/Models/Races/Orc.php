@@ -2,15 +2,25 @@
 
 namespace App\Models\Races;
 
+
+/**
+ * Represents the race of the orcs
+ *
+ * @author Julian Barrios
+ * @package App\Models\Races
+ * @uses \App\Models\Races\Race
+ * @version 0.2
+ */
 class Orc extends Race {
 
     /**
      * Orc constructor.
+     * Initializes all the race attributes
      */
     public function __construct() {
-        $this->name = "orcos";
-        $this->description = "Los seres más malvados de la tierra. No son resistentes a la luz del sol"
-                            . " prefieren los ambientes oscuros, aunque son fuertes y rapidos";
+        $this->name = "orcs";
+        $this->description = "The most evil beings on earth. The can't resist sunlight, "
+                            . " they rather dark places, although they are fast and strong";
         $this->picture = "orc.jpg";
         $this->minmax_life = [60, 80];
         $this->minmax_power = [90, 100];

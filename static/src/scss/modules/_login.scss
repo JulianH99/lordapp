@@ -56,13 +56,15 @@
       font-size: 1.5em;
       text-shadow: 0 0 20px $secondary_color;
     }
-    .login-form{
+    .button-container{
       margin-top: 7em;
       width: 100%;
-      input{
+      .button{
         --shadow-color: #EA6020;
         padding: .4em .7em;
         width: 100%;
+        display: block;
+        text-decoration: none;
         font-size: 1.5em;
         background: rgba(#222, .9);
         color: #fff;
@@ -70,7 +72,7 @@
         font-family: $secondary_font;
         box-shadow: 0 0 10px var(--shadow-color);
         transition: all .3s;
-        &:focus{
+        &:hover{
           box-shadow: 0 0 50px var(--shadow-color);
         }
       }

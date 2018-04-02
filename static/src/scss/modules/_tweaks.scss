@@ -1,0 +1,220 @@
+.tweak-container{
+    display: flex;
+    height: 100vh;
+    //border: 1px solid red;
+    background: #222;
+    color: #fff;
+    .container__character, .tweak-options {
+        width: 50%;
+    }
+    /* character styles */
+    .container__character {
+        display: inherit;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        
+        .character__img-container{
+            height: 372px;
+            //border: 1px solid red;
+            position: relative;
+            &:before{
+                content: '';
+                width: 310px;
+                height: 380px;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                //border: 1px solid red;
+                background: linear-gradient(to bottom,
+                    $secondary_color,
+                    $accent_color);
+                
+            }
+            .character__img{
+                width: 300px;
+                height: 370px;
+                position: relative;
+                
+                
+            }
+        }
+        .character__name-container{
+            margin-top: 1em;
+            font-family: $secondary_font;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 5px;
+            .character__name {
+                text-shadow: 0 0 10px $secondary_color;
+            }
+            
+        }
+        
+    }
+
+    /* tweak options */
+    .tweak-options{
+        //border: 1px solid red;
+        border-left: 3px solid $accent_color;
+        .tweak-panel{
+            &__title{
+                background: $secondary_color;
+                font-family: $content_font;
+                padding: .3em 1em;
+                font-size: 1.1em;
+                background: linear-gradient(
+                    to right,
+                    $accent_color,
+                    $accent_color_2
+                );
+            }
+            &__content{
+                .stats{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    padding: 1em;
+                    .stat{
+                        padding: .5em 0;
+                        //border: 1px solid red;
+                        width: 50%;
+                        margin: auto;
+                        &__text{
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        &__input{
+                            padding:.5em;
+                            input{
+                                -webkit-appearance: none;
+                                //border: 1px solid blue;
+                                width: 100%;
+                                height: 5px;
+                                border-radius: 4px;
+                                background: $secondary_color;
+                                outline: none;
+                                &::-webkit-slider-thumb{
+                                    appearance: none;
+                                    width: 15px;
+                                    height: 20px;
+                                    border-radius: 10px;
+                                    background: darken($secondary_color, .6);
+                                    cursor: pointer;
+                                    transition: all .2s;
+                                    &:hover{
+                                        background: darken($secondary_color, .9);
+                                        transform: scale(1.2);
+                                    }
+                                }
+                                
+                            }
+                            
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* weapons'slider */
+    .weapons-container{
+        //border: 1px solid blue;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .weapons-slider{
+            --width: 300%;
+            position: relative;
+            height: 90% !important;
+            
+            width: 300%;
+            display: flex;
+            left: 0;
+            .weapon-slide{
+                width: 100%;
+                height: 100%;
+                &__content{
+                    display: flex;
+                    //border: 1px solid red;
+                    height: 100%;
+                    .weapon-picture-name{
+                        //border: 1px solid red;
+                        display: inherit;
+                        width: 50%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1em;
+                        .weapon__picture{
+                            width: 200px;
+                            height: 140px;
+                            margin-top: 10px;
+                            padding: .5em;
+                            border: 3px solid $secondary_color;
+                        }
+                        .weapon__name{
+                            font-family: $secondary_font;
+                        }
+                    }
+                    .weapon__effects{
+                        padding-top: 2em;
+                        width: 50%;
+                        &-list{
+                            li{
+                                padding-left: 1em;
+                            }
+                            .list__title{
+                                font-size: 1.2em;
+                                font-family: $secondary_font;
+                            }
+                            .effect{
+                                font-family: $content_font;
+                                line-height: 2;
+                                font-size: 1.1em;
+                                
+                                width: 100%;
+                                transition: all .2s;
+                                &:hover{
+                                    background: $secondary_color;
+                                    color: #222;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .weapon-slider__controls{
+            //border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            height: 10%;
+            .control{
+                width: 100%;
+                font-size: 1.3em;
+                padding: .5em;
+                text-align: center;
+                transition: all .2s;
+                
+                cursor: pointer;
+            }
+            #prev{
+                background: linear-gradient(
+                        to right,
+                        $accent_color,
+                        $accent_color_2
+                );
+            }
+            #next{
+                background: linear-gradient(
+                        to right,
+                        $accent_color_2,
+                        $accent_color
+                );
+            }
+        }
+    }
+}

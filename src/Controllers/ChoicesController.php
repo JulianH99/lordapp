@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: julian
- * Date: 29/03/18
- * Time: 09:44 PM
- */
+
 
 namespace App\Controllers;
 
@@ -25,13 +20,28 @@ use Framework\Helpers\View;
 use Framework\Core\BaseController as Controller;
 
 
+/**
+ * Handles the race and character choice, including the 
+ * callbacks from the tweaks
+ * 
+ * @author Julian Barrios
+ * @package App\Controllers
+ * @uses \Framework\Core\BaseController
+ * @version 0.3
+ */
 class ChoicesController extends Controller {
 
 
+    /* custom controller attributes */
     private $races = [];
     private $chars = [];
     private $weapons = [];
 
+    /**
+     * Generates all the arrays from the attributes
+     * 
+     * @version 0.3
+     */
     public function __construct() {
         $this->races = [
             "dwarf" => new Dwarf(),
@@ -60,12 +70,9 @@ class ChoicesController extends Controller {
      * @return void
      * @version 0.1
      * @throws \Framework\Lib\Exceptions\ViewNotFoundException
+     * @see \Framework\Helpers\View
      */
     public function index(){
-
-        $name = $_POST['name'];
-
-        $_SESSION['name'] = $name;
 
         $data = [
             "races" => $this->races
@@ -76,13 +83,19 @@ class ChoicesController extends Controller {
     }
 
     /**
-     *
+     * Gets the chosen race and sends an array of characters
+     * to show on the view
+     * 
+     * @return void
+     * @version 0.2
      * @throws \Framework\Lib\Exceptions\ViewNotFoundException
+     * @see \Framework\Helpers\View
      */
     public function chooserace() {
 
         $race = strtolower($_POST['race']);
 
+        /* get characters that have the selected race */
         $race_characters = array_filter($this->chars, function($elem) use($race){
            return $elem->getRace()->getName() === $race;
         });
@@ -100,7 +113,9 @@ class ChoicesController extends Controller {
      * Loads the character information to pass it to a new view
      *
      * @return void
+     * @version 0.1
      * @throws \Framework\Lib\Exceptions\ViewNotFoundException
+     * @see Framework\Helpers\View
      */
     public function choosechar() {
 
@@ -108,7 +123,7 @@ class ChoicesController extends Controller {
         
         $chosen_character = $this->chars[$character];
 
-        $chosen_character->automatic_configure();
+        $chosen_character->automatic_configure(); // trigger the automatic configure
 
         $data = [
             "character" => $chosen_character,

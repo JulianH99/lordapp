@@ -12,13 +12,22 @@ use App\Models\Accessories\Effect;
 use App\Models\Accessories\WeaponType;
 
 /**
- * Class Shooter
- * @package Src\models\accessories\WeaponTypes
+ * Represents the Shooter weapon type class
+ *
+ * @author Julian Barrios
+ * @package App\Models\Accessories\WeaponTypes
+ * @uses \App\Models\Accessories\WeaponType
+ * @version 0.2
  */
 class Shooter extends WeaponType {
 
+    /**
+     * Shooter constructor.
+     *
+     * @see \App\Models\Accessories\Effect
+     * @version 0.2
+     */
     public function __construct() {
-        $this->minmax_power = [80, 90];
         $this->effects = [
             new Effect("power", 3),
             new Effect("speed", 6),

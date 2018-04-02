@@ -4,12 +4,23 @@
 namespace App\Models\Races;
 
 
-
+/**
+ * Represents the race of the hobbits
+ *
+ * @author Julian Barrios
+ * @package App\Models\Races
+ * @version 0.2
+ * @see \App\Models\Races\Race
+ */
 class Hobbit extends Race {
 
+    /**
+     * Hobbit constructor.
+     * Initializes all the race attributes
+     */
     public function __construct(){
         $this->name = "hobbits";
-        $this->description = "Más pequeños que los enanos. Algunos son fuertes, otros más rápidos";
+        $this->description = "Shorter than dwarfs. Some are stronger, some faster";
         $this->picture = "hobbit.jpg";
         $this->minmax_life =  [60, 80];
         $this->minmax_power = [80, 95];

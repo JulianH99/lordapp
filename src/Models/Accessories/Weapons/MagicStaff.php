@@ -6,10 +6,20 @@ use App\Models\Accessories\Weapon;
 use App\Models\Accessories\WeaponTypes\Magic;
 
 /**
- * Undocumented class
+ * Represents the Magic Staff weapon
+ *
+ * @author Julian Barrios
+ * @package  App\Models\Accessories\Weapons
+ * @uses \App\Models\Accessories\Weapon
+ * @version 0.2
  */
 class MagicStaff extends Weapon {
 
+    /**
+     * MagicStaff constructor
+     *
+     * @version 0.2
+     */
     public function __construct() {
         $this->name = "Magic Staff";
         $this->picture = "mstaff.jpg";

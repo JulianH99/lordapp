@@ -7,22 +7,23 @@
     <div class="tweak-container">
         <section class="container__character">
             <div class="character__img-container">
-                {# <img src="./static/dist/img/characters/{{ character.picture }}"
-                     alt="{{ character.name }}" class="character__img"> #}
+                <img src="./static/dist/img/characters/{{ character.picture }}"
+                     alt="{{ character.name }}" class="character__img">
             </div>
             <div class="character__name-container">
                 <p class="character__name">{{ character.name }}</p>
+                <div class="user__name">{{ username }}</div>
             </div>
         </section>
         <section class="tweak-options">
 
             <div class="tweal-panel">
-                <p class="tweak-panel__title">Estadisticas</p>
+                <p class="tweak-panel__title">Stats</p>
                 <section class="tweak-panel__content">
                     <div class="stats">
                         <div class="stat">
                             <div class="stat__text">
-                                <p class="stat__name">Vida</p>
+                                <p class="stat__name">Life</p>
                                 <p class="stat__value">{{ character.life }}</p>
                             </div>
                             <div class="stat__input">
@@ -34,7 +35,7 @@
                         </div>
                         <div class="stat">
                             <div class="stat__text">
-                                <p class="stat__name">Poder</p>
+                                <p class="stat__name">Power</p>
                                 <p class="stat__value">{{ character.power }}</p>
                             </div>
                             <div class="stat__input">
@@ -46,7 +47,7 @@
                         </div>
                         <div class="stat">
                             <div class="stat__text">
-                                <p class="stat__name">Resistencia</p>
+                                <p class="stat__name">Resistance</p>
                                 <p class="stat__value">{{ character.resistance }}</p>
                             </div>
                             <div class="stat__input">
@@ -58,7 +59,7 @@
                         </div>
                         <div class="stat">
                             <div class="stat__text">
-                                <p class="stat__name">Velocidad</p>
+                                <p class="stat__name">Speed</p>
                                 <p class="stat__value">{{ character.speed }}</p>
                             </div>
                             <div class="stat__input">
@@ -73,13 +74,40 @@
                 </section>
             </div>
             <div class="tweak-panel">
-                <p class="tweak-panel__title">Arma</p>
+                <p class="tweak-panel__title">Weapon</p>
                 <div class="tweak-panel__content">
                     <section class="weapons-container">
-                        <div class="weapon-slider">
+                        <div class="weapons-slider">
                             {% for weapon in weapons %}
-
+                                <div class="weapon-slide">
+                                    <div class="weapon-slide__content">
+                                        <div class="weapon-picture-name">
+                                            <p class="weapon__name">{{ weapon.name }}</p>
+                                            <img src="./static/dist/img/weapons/{{ weapon.picture }} " alt="{{ weapon.name }}" class="weapon__picture">
+                                        </div>
+                                        <div class="weapon__effects">
+                                            <ul class="weapon__effects-list">
+                                                <li class="list__title">Effects</li>
+                                                {% for effect in weapon.weapontype.effects %}
+                                                    <li class="effect">{{ effect.affectedattribute }}  
+                                                        {% spaceless %}
+                                                            {% if effect.value > 0 %}
+                                                                +{{ effect.value }}
+                                                            {% else %}
+                                                                {{ effect.value }}
+                                                            {% endif %}
+                                                        {% endspaceless %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             {% endfor %}
+                        </div>
+                        <div class="weapon-slider__controls">
+                            <div class="control" id="prev">&#8695;</div>
+                            <div class="control" id="next">&#8696;</div>
                         </div>
                     </section>
                 </div>

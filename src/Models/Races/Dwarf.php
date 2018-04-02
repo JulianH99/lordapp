@@ -3,15 +3,23 @@
 namespace App\Models\Races;
 
 /**
- * Class Dwarf
- * @version 0.1
+ * Represents the race of Dwarfs
+ *
+ * @author Julian Barrios
+ * @package App\Models\Races
+ * @uses \App\Models\Races\Race
+ * @version 0.2
  */
 class Dwarf extends Race {
 
+    /**
+     * Dwarf constructor.
+     * Initializes the race attributes
+     */
     public function __construct(){
-        $this->name = "enanos";
-        $this->description = "Humanoides de poco tamaño, pero con cuerpos robustos "
-                            . "y un gran manejo de las armas";
+        $this->name = "Dwarfs";
+        $this->description = "Humanoids with small, but strong body "
+                            . "and a great ability with weapons";
         $this->picture = "dwarf.jpg";
         $this->minmax_life = [90, 100];
         $this->minmax_power = [70, 90];

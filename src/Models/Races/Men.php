@@ -4,14 +4,25 @@
 namespace App\Models\Races;
 
 
-
+/**
+ * Represents the race of the men
+ *
+ * @author Julian Barrios
+ * @package App\Models\Races
+ * @uses \App\Models\Races\Race
+ * @version 0.2
+ */
 class Men extends Race {
 
+    /**
+     * Men constructor.
+     * Initializes all the race attributes
+     */
     public function __construct(){
-        $this->name = "hombres";
-        $this->description = "Una de las razas más antiguas y más numerosas de la tierra"
-                            . ". Tienes menos resistencia y poder que los demas, pero una longevidad y"
-                            . " y velocidad considerables";
+        $this->name = "men";
+        $this->description = "One of the oldest and most numerous races on earth"
+                            . ". They have less resistance and power than the other races, but long life"
+                            . " and considerable speed";
         $this->picture = "men.jpg";
         $this->minmax_life = [80, 100];
         $this->minmax_power = [60, 70];

@@ -16,16 +16,64 @@ namespace App\Models\Races;
 abstract class Race {
 
     /* class variables */
+
+    /**
+     * Represents no race
+     */
     const NONE = null;
 
     /* object variables */
+
+    /**
+     * Name of the race.
+     * Must be override
+     * @var string
+     */
     protected $name = '';
+
+    /**
+     * Description of the race.
+     * Must be override
+     * @var string
+     */
     protected $description = '';
+
+    /**
+     * Picture of the race, including file extension
+     * Must be override
+     * @var string
+     */
     protected $picture = '';
+
+    /**
+     * Minimum and maximum of life the race can have
+     * @var array
+     */
     protected $minmax_life = [];
+
+    /**
+     * Minimum and maximum of power the race can have
+     * @var array
+     */
     protected $minmax_power = [];
+
+    /**
+     * Minimum and maximum of resistance the race can have
+     * @var array
+     */
     protected $minmax_resistance = [];
+
+    /**
+     * Minimum and maximum of speed the race can have
+     * @var array
+     */
     protected $minmax_speed = [];
+
+    /**
+     * Proportions given to the values of the race
+     * Must be override
+     * @var array
+     */
     protected $proportions = [
         "life" => 0,
         "power" => 0,

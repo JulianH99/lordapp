@@ -1,18 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Julian
- * Date: 3/28/2018
- * Time: 3:04 PM
- */
+
 
 namespace App\Helpers;
 
 
 /**
  * Contains method that provide useful operations when dealing with ranges
- * @package App\Helpers
  * @author Julian Barrios
+ * @package App\Helpers
  * @version 0.1
  */
 class RangeHelper{

@@ -4,27 +4,73 @@ namespace App\Models\Characters;
 
 
 use App\Helpers\RangeHelper;
+use App\Models\Accessories\WeaponType;
 use App\Models\Races\Race;
 use App\Models\Accessories\Weapon;
 use App\Interfaces\Configurable;
 use App\Interfaces\AutomaticallyConfigurable;
 
 /**
- * contains all the needed information a character can have
+ * Contains all the needed information a character can have
+ *
  * @author Julian Barrios
- * @version 0.1
+ * @version 0.5
+ * @package App\Models\Characters
+ * @uses \App\Interfaces\AutomaticallyConfigurable
+ * @uses \App\Interfaces\Configurable
+ * @abstract
  */
 abstract class Character implements Configurable, AutomaticallyConfigurable{
 
+    /**
+     * Name of the character
+     * @var string
+     */
     protected $name = '';
+
+    /**
+     * Life points of the character
+     * @var int
+     */
     protected $life = 0;
+
+    /**
+     * Race of the character
+     * @var Race
+     * @see \App\Models\Races\Race
+     */
     protected $race = Race::NONE;
+
+    /**
+     * Power points of the character
+     * @var int
+     */
     protected $power = 0;
+
+    /**
+     * Resistance points of the character
+     * @var int
+     */
     protected $resistance = 0;
+
+    /**
+     * Speed points of the character
+     * @var int
+     */
     protected $speed = 0;
+
+    /**
+     * Weapon that the character is going to use
+     * @var Weapon
+     * @see \App\Models\Accessories\Weapon
+     */
     protected $weapon = Weapon::NONE;
+
+    /**
+     * Picture of the character, including file extension
+     * @var string
+     */
     protected $picture = '';
-    protected $automatic_configure = true;
 
 
 
@@ -73,10 +119,10 @@ abstract class Character implements Configurable, AutomaticallyConfigurable{
     }
 
     /**
-     * @param null $race
+     * @param Race $race
      * @return Character
      */
-    public function setRace($race)
+    public function setRace(Race $race)
     {
         $this->race = $race;
         return $this;
@@ -137,7 +183,7 @@ abstract class Character implements Configurable, AutomaticallyConfigurable{
     }
 
     /**
-     * @return null
+     * @return Weapon
      */
     public function getWeapon()
     {
@@ -145,37 +191,23 @@ abstract class Character implements Configurable, AutomaticallyConfigurable{
     }
 
     /**
-     * @param null $weapon
+     * @param Weapon $weapon
      * @return Character
      */
-    public function setWeapon($weapon)
+    public function setWeapon(Weapon $weapon)
     {
         $this->weapon = $weapon;
         return $this;
     }
 
+
+
     /**
+     * Configures automatically the character based on the limits
+     * from its race
+     *
      * @return bool
-     */
-    public function isAutomaticConfigure(): bool
-    {
-        return $this->automatic_configure;
-    }
-
-    /**
-     * @param bool $automatic_configure
-     * @return Character
-     */
-    public function setAutomaticConfigure(bool $automatic_configure): Character
-    {
-        $this->automatic_configure = $automatic_configure;
-        return $this;
-    }
-
-
-
-    /**
-     * @return bool
+     * @version 0.1
      */
     public function automatic_configure(): bool{
 
@@ -197,17 +229,22 @@ abstract class Character implements Configurable, AutomaticallyConfigurable{
     }
 
     /**
+     * Configures the character based on the params given in the array
+     *
      * @param array $params
      * @return bool
+     * @version 0.1
      */
     public function configure($params = array()): bool{
 
+        /* check if all attributes are in the array */
         if (isset($params['life'])
             && isset($params['power'])
             && isset($params['resistance'])
             && isset($params['speed'])
             && isset($params['weapon'])) {
 
+            /* check if all values are valid in the limits of the character's race */
             if (RangeHelper::in($params['life'], $this->race->getMinmaxLife())
                 && RangeHelper::in($params['power'], $this->race->getMinmaxPower())
                 && RangeHelper::in($params['resistance'], $this->race->getMinmaxResistance())

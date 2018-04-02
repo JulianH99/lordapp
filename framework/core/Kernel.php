@@ -7,7 +7,12 @@ use Framework\Lib\Exceptions\MethodNotFoundException;
 
 /**
  * Class Kernel
+ * Bootstraps the application
+ *
+ * @author Julian Barrios
  * @package Framework\Core
+ * @version 0.2
+ *
  */
 class Kernel {
 
@@ -22,10 +27,9 @@ class Kernel {
     }
 
     /**
-     *
+     * Initializes application variables
      */
     public function init() {
-
 
 
         define("DS", DIRECTORY_SEPARATOR);
@@ -53,6 +57,8 @@ class Kernel {
     }
 
     /**
+     * Returns the current controller
+     *
      * @return string
      */
     private function getController() {
@@ -67,6 +73,8 @@ class Kernel {
     }
 
     /**
+     * Returns the current method
+     *
      * @return string
      */
     private function getMethod() {
@@ -81,6 +89,8 @@ class Kernel {
     }
 
     /**
+     * Redirects according to the method and controller passed as parameters
+     *
      * @throws ControllerNotFoundException
      * @throws MethodNotFoundException
      */

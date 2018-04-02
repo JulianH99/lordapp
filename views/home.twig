@@ -17,19 +17,14 @@
         <div class="container">
 
             <section class="title">
-                <h1>Bienvenido a Mordor!</h1>
+                <h1>Welcome to Mordor!</h1>
             </section>
-            <form action="?c=choices"
-                  method="post"  class="login-form" id="login-form">
-                <div class="form-group">
-                    <input type="text" name="name" id="login-input" placeholder="Ingresa tu nombre" />
-            </form>
+            <div class="button-container">
+                <a class="button" href="?c=choices">Play</a>
+            </div>
         </div>
     </main>
 {% endblock  %}
 
-{% block scripts %}
-    <script src="./static/dist/js/login.js"></script>
-{% endblock %}
 
  

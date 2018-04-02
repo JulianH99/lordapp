@@ -3,18 +3,21 @@
 namespace App\Models\Races;
 
 /**
- * Class Maiar. Represents the common attributes a Maiar must have
+ * Represents the race of the maiars
  * @author Julian Battios
- * @version 0.1
+ * @package  App\Models\Races
+ * @uses \App\Models\Races\Race
+ * @version 0.2
  */
 class Maiar extends Race {
 
     /**
      * Maiar constructor.
+     * Initializes the race attributes
      */
     public function __construct() {
         $this->name = "maiars";
-        $this->description = "Poderosos seres magicos creados antes del universo mismo";
+        $this->description = "Powerful magic beings created before universe itself";
         $this->picture = "maiar.jpg";
         $this->minmax_life = [90, 100];
         $this->minmax_power = [90, 100];

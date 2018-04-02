@@ -8,14 +8,38 @@ namespace App\Models\Accessories;
  * 
  * @author Julian Barrios
  * @version 0.1
+ * @package  App\Models\Accessories
+ * @abstract
  */
 abstract class Weapon {
     /* class variables */
+
+    /**
+     * Represents no weapon
+     */
     const NONE = null;
 
     /* object variables */
+
+    /**
+     * Name of the weapon
+     * Must be override
+     * @var string
+     */
     protected $name = '';
+
+    /**
+     * Picture name, including extension, of the weapon
+     * Must be override
+     * @var string
+     */
     protected $picture = '';
+
+    /**
+     * Weapon type of the weapon
+     * @var WeaponType
+     * @see \App\Models\Accessories\WeaponType
+     */
     protected $weapon_type = WeaponType::NONE;
     
 

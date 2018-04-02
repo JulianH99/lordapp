@@ -4,7 +4,7 @@ namespace Framework\Core;
 
 /**
  * Holds the basic structure that a controller must follow
- * @author JulianH99 <juliancorredors99@outlook.com>
+ * @author Julian Barrios
  * @abstract
  * @version 0.1
  * @license MIT
