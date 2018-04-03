@@ -3,16 +3,19 @@
 {% block title %} Tweak your character {% endblock %}
 
 {% block content %}
-
-    <div class="tweak-container">
+    <form method="post" action="?c=choices&m=summary">
+    <div class="tweak-container" data-proportions="{{ character.race.proportions | json_encode() }}">
+        
+        
         <section class="container__character">
+            <input type="hidden" name="character_name" value="{{ character.name }}">
             <div class="character__img-container">
                 <img src="./static/dist/img/characters/{{ character.picture }}"
                      alt="{{ character.name }}" class="character__img">
             </div>
             <div class="character__name-container">
                 <p class="character__name">{{ character.name }}</p>
-                <div class="user__name">{{ username }}</div>
+                <button class="button" type="submit">Pay Now!</button>
             </div>
         </section>
         <section class="tweak-options">
@@ -30,7 +33,8 @@
                                 <input type="range" name="character_life" 
                                     id="character_life" min="{{ character.race.minmaxlife[0] }}"
                                     max="{{ character.race.minmaxlife[1] }}"
-                                    value="{{ character.life }}">
+                                    value="{{ character.life }}"
+                                    data-oldval="{{ character.life }}">
                             </div>
                         </div>
                         <div class="stat">
@@ -39,10 +43,11 @@
                                 <p class="stat__value">{{ character.power }}</p>
                             </div>
                             <div class="stat__input">
-                                <input type="range" name="character_life" 
-                                    id="character_life" min="{{ character.race.minmaxpower[0] }}"
+                                <input type="range" name="character_power" 
+                                    id="character_power" min="{{ character.race.minmaxpower[0] }}"
                                     max="{{ character.race.minmaxpower[1] }}"
-                                    value="{{ character.power }}">
+                                    value="{{ character.power }}"
+                                    data-oldval="{{ character.power }}">
                             </div>
                         </div>
                         <div class="stat">
@@ -51,10 +56,11 @@
                                 <p class="stat__value">{{ character.resistance }}</p>
                             </div>
                             <div class="stat__input">
-                                <input type="range" name="character_life" 
-                                    id="character_life" min="{{ character.race.minmaxresistance[0] }}"
+                                <input type="range" name="character_resistance" 
+                                    id="character_resistance" min="{{ character.race.minmaxresistance[0] }}"
                                     max="{{ character.race.minmaxresistance[1] }}"
-                                    value="{{ character.resistance }}">
+                                    value="{{ character.resistance }}"
+                                    data-oldval="{{ character.resistance }}">
                             </div>
                         </div>
                         <div class="stat">
@@ -63,10 +69,11 @@
                                 <p class="stat__value">{{ character.speed }}</p>
                             </div>
                             <div class="stat__input">
-                                <input type="range" name="character_life" 
-                                    id="character_life" min="{{ character.race.minmaxspeed[0] }}"
+                                <input type="range" name="character_speed" 
+                                    id="character_speed" min="{{ character.race.minmaxspeed[0] }}"
                                     max="{{ character.race.minmaxspeed[1] }}"
-                                    value="{{ character.speed }}">
+                                    value="{{ character.speed }}"
+                                    data-oldval="{{ character.speed}}">
                             </div>
                         </div>
                         
@@ -74,12 +81,14 @@
                 </section>
             </div>
             <div class="tweak-panel">
+                <input type="hidden" name="character_weapon" id="character_weapon">
                 <p class="tweak-panel__title">Weapon</p>
                 <div class="tweak-panel__content">
                     <section class="weapons-container">
                         <div class="weapons-slider">
                             {% for weapon in weapons %}
-                                <div class="weapon-slide">
+                                <div class="weapon-slide" id="{{ weapon.name ~ loop.index}}" 
+                                    data-name="{{ weapon.name }}">
                                     <div class="weapon-slide__content">
                                         <div class="weapon-picture-name">
                                             <p class="weapon__name">{{ weapon.name }}</p>
@@ -89,7 +98,8 @@
                                             <ul class="weapon__effects-list">
                                                 <li class="list__title">Effects</li>
                                                 {% for effect in weapon.weapontype.effects %}
-                                                    <li class="effect">{{ effect.affectedattribute }}  
+                                                    <li class="effect" data-value="{{ effect.value }}"
+                                                    data-attr="{{ effect.affectedattribute }}">{{ effect.affectedattribute }}  
                                                         {% spaceless %}
                                                             {% if effect.value > 0 %}
                                                                 +{{ effect.value }}
@@ -113,11 +123,14 @@
                 </div>
             </div>
         </section>
+        
     </div>
+    </form>
 
 {% endblock %}
 
 {% block scripts %}
     {{ parent() }}
-    <script src="./static/dist/js/tweak.js"></script>
+    <script src="./static/dist/js/tweaks.js"></script>
+    <script src="./static/dist/js/weapons.js"></script>
 {% endblock %}

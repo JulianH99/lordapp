@@ -447,6 +447,27 @@ ul {
   text-shadow: 0 0 10px #ea6020;
 }
 
+.tweak-container .container__character .character__name-container .button {
+  width: 100%;
+  background: #222;
+  border: 1px solid #ea6020;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  color: #fff;
+  margin-top: 1em;
+  font-size: 1.3em;
+  padding: .3em 1em;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.tweak-container .container__character .character__name-container .button:hover {
+  background: #ea6020;
+  color: #222;
+}
+
 .tweak-container .tweak-options {
   border-left: 3px solid #07367c;
 }
@@ -536,13 +557,17 @@ ul {
 
 .tweak-container .weapons-container .weapons-slider {
   --width: 300%;
+  --left: -100%;
   position: relative;
   height: 90% !important;
-  width: 300%;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  width: var(--width);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  left: 0;
+  left: var(--left);
 }
 
 .tweak-container .weapons-container .weapons-slider .weapon-slide {
@@ -647,4 +672,117 @@ ul {
   background: -webkit-linear-gradient(left, #4a0650, #07367c);
   background: -o-linear-gradient(left, #4a0650, #07367c);
   background: linear-gradient(to right, #4a0650, #07367c);
+}
+
+.summary {
+  background-image: -webkit-linear-gradient(330deg, #434343 0%, black 100%);
+  background-image: -o-linear-gradient(330deg, #434343 0%, black 100%);
+  background-image: linear-gradient(-240deg, #434343 0%, black 100%);
+  color: #fff;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.summary__title {
+  font-size: 1.2em;
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+.summary .character-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: 100%;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.summary .character-container .character__img-container .character__img {
+  width: 250px;
+  height: 300px;
+  border-left: 2px solid #ea6020;
+  border-right: 2px solid #ea6020;
+  padding: 0 .5em;
+}
+
+.summary .character-container .character__name {
+  font-size: 1.2em;
+  font-family: "Berkshire Swash", serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #ea6020;
+  margin-top: 1em;
+  letter-spacing: 10px;
+}
+
+.summary .title {
+  text-align: center;
+  font-size: 1.5em;
+  font-family: "Cinzel", serif;
+  margin-top: 1em;
+}
+
+.summary .weapon-container {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.summary .weapon-container .weapon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+}
+
+.summary .weapon-container .weapon__img {
+  border: 2px dashed #ea6020;
+  padding: .5em;
+  width: 200px;
+}
+
+.summary .weapon-container .weapon__name {
+  margin-top: .5em;
+  font-family: "Berkshire Swash", serif;
+  font-size: 1.3em;
+}
+
+.summary .stats-container {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.summary .stats-container .stats {
+  margin: 1em auto;
+}
+
+.summary .stats-container .stats .stat {
+  text-align: center;
+  line-height: 3;
+  font-family: "Berkshire Swash", serif;
 }

@@ -1,0 +1,37 @@
+{% extends 'layouts/layout.twig' %}
+
+{% block title %} Summary {% endblock %}
+
+{% block content %}
+
+    <div class="summary">
+        <div class="character-container">
+            <div class="summary__title">Your character</div>
+            <div class="character__img-container">
+                <img src="./static/dist/img/characters/{{ character.picture }}" 
+                    alt="{{ characer.name }}" class="character__img">
+            </div>
+            <p class="character__name">{{ character.name|title }}</p>
+        </div>
+        <div class="stats-container">
+            <div class="title">Stats</div>
+            <ul class="stats">
+                <li class="stat">Life: {{ character.life }}</li>
+                <li class="stat">Power: {{ character.power }}</li>
+                <li class="stat">Resistance: {{ character.resistance }}</li>
+                <li class="stat">Speed: {{ character.speed }}</li>
+            </ul>
+        </div>
+        <div class="weapon-container">
+            <div class="title">Weapon</div>
+            <div class="weapon">
+                <div class="weapon__img-container">
+                    <img src="./static/dist/img/weapons/{{ character.weapon.picture }}" alt=""
+                        class="weapon__img">
+                </div>
+                <p class="weapon__name">{{ character.weapon.name }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+.summary{
+    background-image: linear-gradient(-240deg, #434343 0%, black 100%);
+    color: #fff;
+    display: grid;
+    //height: 100vh;
+    min-height: 100vh;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    &__title{
+        font-size: 1.2em;
+        font-family: $title_font;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+        
+    }
+    
+    .character-container{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 100%;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .character__img-container{
+            .character__img{
+                width: 250px;
+                height: 300px;
+                border-left: 2px solid $secondary_color;
+                border-right: 2px solid $secondary_color;
+                padding: 0 .5em;
+            }
+        }
+        .character__name{
+            font-size: 1.2em;
+            font-family: $secondary_font;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px $secondary_color;
+            margin-top: 1em;
+            letter-spacing: 10px;
+        }
+    }
+
+    .title{
+        text-align: center;
+        font-size: 1.5em;
+        font-family: $title_font;
+        margin-top: 1em;
+    }
+    .weapon-container{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        //display: flex;
+        .weapon{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+           
+            
+            &__img{
+                border: 2px dashed $secondary_color;
+                padding: .5em;
+                width: 200px;
+            }
+            &__name{
+                margin-top: .5em;
+                font-family: $secondary_font;
+                font-size: 1.3em;
+            }
+        }
+    }
+    .stats-container{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        .stats{
+            margin: 1em auto;
+            .stat{
+                text-align: center;
+                line-height: 3;
+                font-family: $secondary_font;
+            }
+        }
+        
+    }
+}

@@ -133,4 +133,40 @@ class ChoicesController extends Controller {
         View::render("show_char", $data);
 
     }
+
+    /**
+     * Loads the character information and displays a summary
+     * 
+     * @return void
+     * @version 0.1
+     * @throws \Framework\Lib\Exceptions\ViewNotFoundException
+     * @see Framework\Helpers\View
+     */
+    public function summary() {
+
+        $character_name = $_POST['character_name'];
+        
+        $character = $this->chars[$character_name];
+
+        $character_data = [
+            "life" => $_POST['character_life'],
+            "power" => $_POST['character_power'],
+            "speed" => $_POST['character_speed'],
+            "resistance" => $_POST['character_resistance']
+        ];
+
+        $weapon_name = $_POST['character_weapon'];
+        //var_dump($weapon_name);
+        foreach($this->weapons as $weapon) {
+            if($weapon->getName() === $weapon_name)
+                $character_data["weapon"] = $weapon;
+        }
+
+        $character->configure($character_data);
+
+
+        //echo "<pre>"; var_dump($character); echo "</pre>";
+        View::render('summary', ['character' => $character]);
+
+    }
 }

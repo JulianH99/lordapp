@@ -238,6 +238,7 @@ abstract class Character implements Configurable, AutomaticallyConfigurable{
     public function configure($params = array()): bool{
 
         /* check if all attributes are in the array */
+
         if (isset($params['life'])
             && isset($params['power'])
             && isset($params['resistance'])
